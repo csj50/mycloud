@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8012
+
+eureka:
+  server:
+    port: 8010
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
+# 网关路由
+zuul:
+  prefix: /api
+  routes:
+    sp1: #这个地方的值是可以任意的字符串
+      path: /sp1/** #映射路径
+      serviceId: service-provider1 #服务的spring.application.name
+#为服务Id名称为service-provider1的项目配置负载均衡策略为随机
+service-provider1:
+  ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

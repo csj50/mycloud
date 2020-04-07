@@ -8,5 +8,7 @@
   <modules>
   	<module>mycloud-eureka</module>
   	<module>mycloud-service-provider1</module>
+  	<module>mycloud-zuul</module>
+  	<module>mycloud-service-provider2</module>
   </modules>
 </project>
