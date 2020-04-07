@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service-provider1
+
+server:
+  port: 8011
+
+eureka:
+  server:
+    port: 8010
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
