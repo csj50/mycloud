@@ -15,3 +15,11 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
+
+apollo: 
+  cacheDir: /opt/data/apollo-cache-dir
+  property: 
+    order: 
+      enable: true
+  bootstrap: 
+    enabled: true
