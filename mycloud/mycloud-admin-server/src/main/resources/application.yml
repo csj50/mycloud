@@ -1,0 +1,47 @@
+server:
+  port: 8014
+
+eureka:
+  server:
+    port: 8010
+  instance:
+    hostname: localhost
+    #在服务注册时带上metadata-map的信息
+    #否则自己监控不了自己
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
+
+#暴露actuator的所有端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  application:
+    name: admin-server
+  profiles:
+    active: secure
+  # 配置SBA Client连接的安全账号密码
+  security:
+    user:
+      name: admin
+      password: admin
+  boot:
+    admin:
+      ui:
+        # 修改网页显示的tab标题
+        title: 应用监控管理
+        # 修改网页的brand的图标和标题
+        brand: <img src='assets/img/icon-spring-boot-admin.svg'><span>应用监控管理</span>

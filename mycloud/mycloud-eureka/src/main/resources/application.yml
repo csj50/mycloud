@@ -16,3 +16,13 @@ eureka:
   server:
     enable-self-preservation: false #关闭自我保护机制
     eviction-interval-timer-in-ms: 10000 #清理间隔（单位毫秒）
+
+#暴露actuator的所有端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

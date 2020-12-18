@@ -10,5 +10,6 @@
   	<module>mycloud-service-provider1</module>
   	<module>mycloud-zuul</module>
   	<module>mycloud-service-provider2</module>
+  	<module>mycloud-admin-server</module>
   </modules>
 </project>
