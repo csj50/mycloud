@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>mycloud-service-provider1</artifactId>
+	<artifactId>mycloud-inside-app1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mycloud-service-provider1</name>
+	<name>mycloud-inside-app1</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -47,16 +47,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
-		<dependency>
-        	<groupId>com.ctrip.framework.apollo</groupId>
-        	<artifactId>apollo-client</artifactId>
-        	<version>1.6.0</version>
-    	</dependency>
-    	
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

@@ -12,7 +12,7 @@ eureka:
     hostname: localhost
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
 
@@ -33,3 +33,19 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+#feign client配置
+feign:
+  client:
+    config:
+      #或者为想要调用的微服务名称
+      default:
+        connectTimeout: 30000
+        readTimeout: 30000
+        loggerLevel: basic
+  okhttp:
+    #使用okhttp作为client
+    enabled: true
+  hystrix:
+    #禁用hystrix
+    enabled: false
