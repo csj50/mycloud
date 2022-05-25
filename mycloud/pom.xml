@@ -12,5 +12,6 @@
   	<module>mycloud-service-provider2</module>
   	<module>mycloud-admin-server</module>
   	<module>mycloud-inside-app1</module>
+  	
   </modules>
 </project>

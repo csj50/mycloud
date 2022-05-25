@@ -14,7 +14,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
+      defaultZone: http://admin:123456${eureka.instance.hostname}:${eureka.server.port}/eureka/
 
 #暴露actuator的所有端口
 management:
@@ -25,3 +25,4 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+      

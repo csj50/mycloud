@@ -14,7 +14,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.server.port}/eureka/
+      defaultZone: http://admin:123456@${eureka.instance.hostname}:${eureka.server.port}/eureka/
 
 apollo: 
   cacheDir: /opt/data/apollo-cache-dir
@@ -22,7 +22,7 @@ apollo:
     order: 
       enable: true
   bootstrap: 
-    enabled: true
+    enabled: false
 
 #暴露actuator的所有端口
 management:
@@ -33,6 +33,11 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+    shutdown:
+      #启用shutdown
+      enabled: true
+      #禁用密码验证
+      sensitive: false
 
 #feign client配置
 feign:

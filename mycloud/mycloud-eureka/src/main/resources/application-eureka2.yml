@@ -1,26 +1,22 @@
 spring:
   application:
-    name: eureka-server
-  #安全认证
-  #开启基于http basic的安全认证
-  security:
-    basic:
-      enabled: true
-    user:
-      name: admin
-      password: 123456
+    name: eureka-server2
 
 server:
-  port: 8010
+  #端口号
+  port: 8009
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka2
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    #是否将自己注册到Eureka Server
+    registerWithEureka: true
+    #是否从Eureka Server获取注册信息
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://admin:123456@${eureka.instance.hostname}:${server.port}/eureka/
+      #配置其他集群的地址进行相互注册
+      defaultZone: http://eureka1:8010/eureka/,http://eureka3:8008/eureka/
   server:
     enable-self-preservation: false #关闭自我保护机制
     eviction-interval-timer-in-ms: 10000 #清理间隔（单位毫秒）
