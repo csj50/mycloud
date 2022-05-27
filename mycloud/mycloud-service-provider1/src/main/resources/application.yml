@@ -54,3 +54,11 @@ feign:
   hystrix:
     #禁用hystrix
     enabled: false
+
+#设置springboot日志级别
+logging:
+  level:
+    com:
+      example:
+        mycloud: debug
+        

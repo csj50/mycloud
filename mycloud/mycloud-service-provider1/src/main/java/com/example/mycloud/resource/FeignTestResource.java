@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.mycloud.feign.FeignClientService;
 
 @RestController
-public class FeginTestResource {
+public class FeignTestResource {
 
 	@Autowired
 	FeignClientService feignClientService;
 	
-	@GetMapping("/feginTest/{id}")
-	public String feginTest(@PathVariable String id) {
+	@GetMapping("/feignTest/{id}")
+	public String feignTest(@PathVariable String id) {
 		return feignClientService.remoteApi(id);
 	}
 }
