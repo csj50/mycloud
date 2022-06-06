@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: service-provider1
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    #数据库号
+    database: 1
+    timeout: 2s
+    
+server:
+  port: 8016
+
+eureka:
+  server:
+    port: 8010
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://admin:123456@${eureka.instance.hostname}:${eureka.server.port}/eureka/
+
+#暴露actuator的所有端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+#配置eureka中的serviceId列表，表明监控哪些服务
+turbine:
+  appConfig: service-provider1
+#指定聚合哪些集群，多个使用逗号分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
+  aggregator: 
+    clusterConfig: default
+#指定集群名称
+  clusterNameExpression: new String("default")
+  
