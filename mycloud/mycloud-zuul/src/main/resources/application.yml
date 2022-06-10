@@ -18,7 +18,20 @@ eureka:
 # 网关路由
 zuul:
   prefix: /api
+  #排除某几个服务
+  #ignored-services: service-provider1
   routes:
+    #URL指定路由方法（和prefix冲突不能同时存在）
+    #service-provider:
+    #  path: /service-provider/**
+    #  url: http://127.0.0.1:8011/
+    #服务指定路由方法1（和prefix冲突不能同时存在）
+    #service-provider:
+    #  path: /service-provider/**
+    #  serviceId: service-provider1
+    #服务指定路由方法2（简化配置）
+    #service-provider1:
+    #  path: /service-provider/**
     sp1: #这个地方的值是可以任意的字符串
       path: /sp1/** #映射路径
       serviceId: service-provider1 #服务的spring.application.name
