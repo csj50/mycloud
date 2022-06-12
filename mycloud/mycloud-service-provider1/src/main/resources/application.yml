@@ -58,7 +58,8 @@ feign:
 #设置springboot日志级别
 logging:
   level:
-    com:
-      example:
-        mycloud: debug
+    root: debug
+#    com:
+#      example:
+#        mycloud: debug
         

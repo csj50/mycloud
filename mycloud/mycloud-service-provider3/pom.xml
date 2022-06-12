@@ -82,6 +82,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
 		</dependency>
+		
+		<!-- sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<dependencyManagement>

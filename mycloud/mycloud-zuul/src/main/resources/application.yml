@@ -49,3 +49,8 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+#设置springboot日志级别
+logging:
+  level:
+    root: debug
