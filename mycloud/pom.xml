@@ -13,6 +13,8 @@
   	<module>mycloud-admin-server</module>
   	<module>mycloud-inside-app1</module>
   	<module>mycloud-service-provider3</module>
+  	<module>mycloud-stream-sender</module>
+  	<module>mycloud-stream-receiver</module>
   	
   </modules>
 </project>

@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: stream-sender
+  rabbitmq:
+    host: 72.19.12.191
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: my_vhost
+  cloud:
+    stream:
+      bindings:
+        groupOutput:
+          #指定输出通道对应的exchange主题名
+          destination: object-exchange
+    
+server:
+  port: 8017
+
+eureka:
+  server:
+    port: 8010
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://admin:123456@${eureka.instance.hostname}:${eureka.server.port}/eureka/
+
+#暴露actuator的所有端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+    shutdown:
+      #启用shutdown
+      enabled: true
+      #禁用密码验证
+      sensitive: false
