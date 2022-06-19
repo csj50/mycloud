@@ -15,6 +15,7 @@
   	<module>mycloud-service-provider3</module>
   	<module>mycloud-stream-sender</module>
   	<module>mycloud-stream-receiver</module>
+  	<module>mycloud-zipkin-server</module>
   	
   </modules>
 </project>

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zipkin-server
+  main:
+    #让应用以非web服务方式启动server.port配置将会失效
+    web-application-type: none
+
+server:
+  #官方默认端口9411
+  port: 9411
+  compression:
+    # 是否开启压缩 默认false
+    enabled: true
